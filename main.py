@@ -1,4 +1,3 @@
-
 def on_button_pressed_a():
     radio.send_value("ambAula", 1)
 input.on_button_pressed(Button.A, on_button_pressed_a)
@@ -31,3 +30,7 @@ numAleatorio = 0
 totalAlunos = 0
 radio.set_group(1)
 totalAlunos = 10
+
+def on_button_pressed_b():
+    radio.send_value("ambAula", 2)
+input.on_button_pressed(Button.B, on_button_pressed_b)
