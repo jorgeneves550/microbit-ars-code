@@ -38,3 +38,11 @@ def intervir(num: number):
 aluno = 0
 radio.set_group(1)
 aluno = 1
+
+def on_button_pressed_a():
+    handrise = 1
+    radio.send_value("A", aluno)
+    basic.show_icon(IconNames.CONFUSED)
+
+
+input.on_button_pressed(Button.A, on_button_pressed_a)
