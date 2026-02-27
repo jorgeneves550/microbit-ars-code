@@ -1,10 +1,3 @@
-numAleatorio = 0
-alunoLed = 0
-linha = 0
-coluna = 0
-radio.set_group(1)
-totalAlunos = 10
-
 def on_gesture_shake():
     global numAleatorio
     numAleatorio = randint(1, totalAlunos)
@@ -12,3 +5,24 @@ def on_gesture_shake():
     radio.send_value("alunoAlt", numAleatorio)
     basic.clear_screen()
 input.on_gesture(Gesture.SHAKE, on_gesture_shake)
+
+numAleatorio = 0
+totalAlunos = 0
+coluna = 0
+linha = 0
+alunoLed = 0
+radio.set_group(1)
+totalAlunos = 10
+
+def on_received_value(name, value):
+    global alunoLed, linha, coluna
+    alunoLed = value - 1
+    linha = int(alunoLed / 5)
+    coluna = alunoLed % 5
+    if name == "A":
+        led.plot(linha, coluna)
+        music.play(music.tone_playable(784, music.beat(BeatFraction.SIXTEENTH)),
+            music.PlaybackMode.UNTIL_DONE)
+    else:
+        led.unplot(linha, coluna)
+radio.on_received_value(on_received_value)
