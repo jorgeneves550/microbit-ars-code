@@ -51,8 +51,12 @@ input.onButtonPressed(Button.B, function () {
     radio.sendValue("B", aluno)
     basic.showIcon(IconNames.Happy)
 })
+radio.onReceivedValue(function (name, value) {
+    let handrise = 0
+    notifica(name, value)
+    intervir(handrise)
+})
 let handrise2 = 0
 let aluno = 0
-let handrise = 0
 radio.setGroup(1)
 aluno = 1

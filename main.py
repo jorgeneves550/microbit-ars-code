@@ -49,6 +49,12 @@ def on_button_pressed_b():
     basic.show_icon(IconNames.HAPPY)
 input.on_button_pressed(Button.B, on_button_pressed_b)
 
+def on_received_value(name, value):
+    notifica(name, value)
+    intervir(handrise)
+radio.on_received_value(on_received_value)
+
+
 handrise2 = 0
 aluno = 0
 handrise = 0
