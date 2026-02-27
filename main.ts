@@ -40,14 +40,19 @@ input.onButtonPressed(Button.A, function () {
     basic.showIcon(IconNames.Confused)
 })
 function intervir (num: number) {
-    let handrise = 0
-    if (handrise == 0) {
+    let handrise3 = 0
+    if (handrise3 == 0) {
         basic.showIcon(IconNames.Happy)
     } else {
         basic.showIcon(IconNames.Confused)
     }
 }
+input.onButtonPressed(Button.B, function () {
+    radio.sendValue("B", aluno)
+    basic.showIcon(IconNames.Happy)
+})
 let handrise2 = 0
 let aluno = 0
+let handrise = 0
 radio.setGroup(1)
 aluno = 1

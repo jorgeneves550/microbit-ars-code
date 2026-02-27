@@ -29,20 +29,28 @@ def notifica(texto: str, num2: number):
                     . . # . .
                     . . . . .
                     """)
+
+def on_button_pressed_a():
+    global handrise2
+    handrise2 = 1
+    radio.send_value("A", aluno)
+    basic.show_icon(IconNames.CONFUSED)
+input.on_button_pressed(Button.A, on_button_pressed_a)
+
 def intervir(num: number):
-    handrise = 0
-    if handrise == 0:
+    handrise3 = 0
+    if handrise3 == 0:
         basic.show_icon(IconNames.HAPPY)
     else:
         basic.show_icon(IconNames.CONFUSED)
+
+def on_button_pressed_b():
+    radio.send_value("B", aluno)
+    basic.show_icon(IconNames.HAPPY)
+input.on_button_pressed(Button.B, on_button_pressed_b)
+
+handrise2 = 0
 aluno = 0
+handrise = 0
 radio.set_group(1)
 aluno = 1
-
-def on_button_pressed_a():
-    handrise = 1
-    radio.send_value("A", aluno)
-    basic.show_icon(IconNames.CONFUSED)
-
-
-input.on_button_pressed(Button.A, on_button_pressed_a)
