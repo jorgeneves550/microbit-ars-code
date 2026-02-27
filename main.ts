@@ -1,3 +1,6 @@
+input.onButtonPressed(Button.A, function () {
+    radio.sendValue("ambAula", 1)
+})
 input.onGesture(Gesture.Shake, function () {
     numAleatorio = randint(1, totalAlunos)
     basic.showNumber(numAleatorio)
